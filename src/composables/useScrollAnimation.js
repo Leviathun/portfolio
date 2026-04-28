@@ -1,5 +1,6 @@
 import { onMounted } from 'vue'
 
+// make animation when scroll to element
 export function useScrollAnimation() {
   onMounted(() => {
     const elements = document.querySelectorAll('.scroll-reveal')

@@ -1,5 +1,6 @@
 import { ref, onMounted } from 'vue'
 
+// make animation when scroll to the statistics number
 export function useCounter(target, suffix = '') {
   const display = ref('0' + suffix)
   const elRef = ref(null)
