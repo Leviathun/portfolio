@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar" :class="{ scrolled, dark: isDark }" id="navbar">
     <div class="nav-container">
-      <a href="#hero" class="nav-logo" @click.prevent="scrollTo('hero')">Portfolio</a>
+      <a href="#hero" class="nav-logo" @click.prevent="scrollTo('hero')"><b>< </b>Portfolio<b> /></b></a>
       <ul class="nav-links" :class="{ open: menuOpen }">
         <li v-for="item in navItems" :key="item.id">
           <a :href="'#' + item.id" class="nav-link" :class="{ active: activeSection === item.id }" @click.prevent="scrollTo(item.id)">{{ item.label }}</a>
