@@ -115,9 +115,9 @@ onMounted(() => {
 
 /* Clouds - bigger sizes, longer movement */
 .cloud { position: absolute; z-index: 1; pointer-events: none; }
-.cloud-left { top: -8%; left: -10%; width: 65%; max-width: 850px; }
-.cloud-right { top: -10%; right: -10%; width: 60%; max-width: 800px; }
-.mini-cloud { top: 18%; left: 38%; width: 16%; max-width: 200px; opacity: 0.7; }
+.cloud-left { top: -10%; left: -10%; width: 70%; max-width: 1600px; }
+.cloud-right { top: -10%; right: -10%; width: 70%; max-width: 1500px; }
+.mini-cloud { top: 30%; left: -22%; width: 80%; max-width: 1000px; }
 
 /* Content */
 .hero-content {
@@ -177,7 +177,7 @@ onMounted(() => {
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(3,105,161,0.4); }
 .btn-outline-light {
   border: 1.5px solid rgba(15,43,68,0.3); color: #0f2b44;
-  background: rgba(255,255,255,0.2); backdrop-filter: blur(6px);
+  background: rgba(255,255,255,1); backdrop-filter: blur(6px);
 }
 .btn-outline-light:hover { background: rgba(255,255,255,0.4); transform: translateY(-2px); }
 
@@ -190,24 +190,26 @@ onMounted(() => {
 /* Sea surface - back layer */
 .sea-surface {
   position: absolute; bottom: 0; left: -5%;
-  width: 110%; z-index: 1;
+  width: 110vw; max-width: none;
+  height: auto;
+  z-index: 1;
 }
 
 /* Boat wrapper - mid layer, contains boat + miniwave */
 .boat-wrapper {
   position: absolute;
-  bottom: 12%; right: 12%;
+  bottom: 20%; right: 7%;
   z-index: 3; pointer-events: auto;
 }
 .sailboat-img {
-  width: 220px; height: auto;
+  width: 1000px; height: auto;
   filter: drop-shadow(0 8px 20px rgba(0,0,0,0.2));
   display: block;
 }
 /* Mini wave - front layer, sits right under the boat */
 .mini-wave {
   position: absolute;
-  bottom: -15px; left: 50%;
+  bottom: -230px; left: 51%;
   transform: translateX(-50%);
   width: 180%;
   z-index: 4;
@@ -217,7 +219,7 @@ onMounted(() => {
 /* === Responsive === */
 @media(max-width:1024px) {
   .boat-wrapper { right: 5%; bottom: 10%; }
-  .sailboat-img { width: 180px; }
+  .sailboat-img { width: 300px; }
 }
 @media(max-width:768px) {
   .hero-content { padding: 90px 20px 0; }
@@ -226,12 +228,16 @@ onMounted(() => {
   .hero-buttons { justify-content: center; }
   .hero-description { margin-left: auto; margin-right: auto; }
   .boat-wrapper { right: 5%; bottom: 8%; }
-  .sailboat-img { width: 140px; }
-  .cloud-left { width: 80%; }
-  .cloud-right { width: 70%; }
+  .sailboat-img { width: 250px; }
+  .cloud-left { width: 120%; top: 0%; left: -15%; }
+  .cloud-right { width: 110%; top: 0%; right: -15%; }
+  .mini-cloud { width: 100%; top: 35%; left: -40%; }
 }
 @media(max-width:480px) {
-  .sailboat-img { width: 110px; }
-  .boat-wrapper { right: 2%; bottom: 5%; }
+  .sailboat-img { width: 200px; }
+  .boat-wrapper { right: 2%; bottom: 8%; }
+  .cloud-left { width: 160%; top: 5%; left: -25%; }
+  .cloud-right { width: 150%; top: 5%; right: -25%; }
+  .mini-cloud { width: 120%; top: 40%; left: -50%; }
 }
 </style>
