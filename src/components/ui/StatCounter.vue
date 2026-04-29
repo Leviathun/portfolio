@@ -17,7 +17,7 @@ const { display, elRef } = useCounter(props.target, props.suffix)
   display: block; font-family: var(--font-heading);
   font-size: 2.5rem; font-weight: 900;
   background: var(--gradient-accent);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  -webkit-background-clip: text; background-clip: text;
 }
 .stat-label { color: var(--text-muted); font-size: 0.85rem; font-weight: 500; margin-top: 4px; }
 </style>
