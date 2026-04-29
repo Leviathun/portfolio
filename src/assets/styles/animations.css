@@ -1,0 +1,15 @@
+@keyframes wave-move { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+@keyframes rock { 0%,100%{transform:rotate(-3deg) translateY(0)} 50%{transform:rotate(3deg) translateY(-8px)} }
+@keyframes sail-flutter { 0%,100%{transform:skewX(0deg)} 50%{transform:skewX(-3deg)} }
+@keyframes wave-arm { 0%,100%{transform:rotate(0deg)} 25%{transform:rotate(-15deg)} 75%{transform:rotate(15deg)} }
+@keyframes flap { 0%,100%{transform:scaleY(1)} 50%{transform:scaleY(0.6)} }
+@keyframes cloud-drift { 0%{transform:translateX(-5%)} 100%{transform:translateX(5%)} }
+@keyframes bubble-rise { 0%{transform:translateY(0) scale(.4);opacity:0} 10%{opacity:.6} 90%{opacity:.3} 100%{transform:translateY(-100vh) scale(1);opacity:0} }
+@keyframes fish-swim { 0%,100%{transform:translateX(0)} 25%{transform:translateX(15px)} 75%{transform:translateX(-15px)} }
+@keyframes fish-tail { 0%,100%{transform:rotate(0deg)} 25%{transform:rotate(8deg)} 75%{transform:rotate(-8deg)} }
+@keyframes seaweed-sway { 0%,100%{transform:rotate(-3deg)} 50%{transform:rotate(3deg)} }
+@keyframes glow-pulse { 0%,100%{filter:brightness(1) drop-shadow(0 0 4px rgba(34,211,238,.3))} 50%{filter:brightness(1.2) drop-shadow(0 0 12px rgba(34,211,238,.5))} }
+@keyframes fadeInUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+@keyframes spin { to{transform:rotate(360deg)} }

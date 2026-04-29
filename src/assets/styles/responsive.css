@@ -1,0 +1,26 @@
+@media(max-width:768px){
+  .hero-content{flex-direction:column-reverse;text-align:center;gap:24px;}
+  .hero-description{margin-left:auto;margin-right:auto;}
+  .hero-buttons{justify-content:center;}
+  .ocean-scene-wrapper{max-width:280px;margin:0 auto;}
+  .nav-links{position:fixed;top:0;right:-100%;width:70%;height:100vh;flex-direction:column;background:rgba(4,13,33,.95);backdrop-filter:blur(20px);padding:80px 32px 32px;gap:8px;transition:right .4s cubic-bezier(.4,0,.2,1);border-left:1px solid var(--glass-border);}
+  .nav-links.open{right:0;}
+  .nav-toggle{display:flex;z-index:1001;}
+  .nav-toggle.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+  .nav-toggle.active span:nth-child(2){opacity:0;}
+  .nav-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+  .projects-grid{grid-template-columns:1fr;}
+  .about-grid{grid-template-columns:1fr;}
+  .about-stats{gap:24px;padding:24px;}
+  .stat-number{font-size:2rem;}
+  .scroll-indicator{display:none;}
+  .swimming-fish{display:none;}
+  .skills-grid{grid-template-columns:1fr;}
+}
+@media(max-width:480px){
+  .hero-name{font-size:2.2rem;}
+  .hero-title-wrapper{font-size:1rem;flex-wrap:wrap;justify-content:center;}
+  .btn{padding:12px 20px;font-size:.88rem;}
+  .projects-filter{gap:6px;}
+  .filter-btn{padding:8px 14px;font-size:.78rem;}
+}
