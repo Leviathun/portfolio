@@ -12,16 +12,26 @@
 </template>
 
 <script setup>
-import underwaterImg from '@/assets/images/footer/under the ocean.png'
+import underwaterImg from '@/assets/images/footer/under the sea.png'
 const year = new Date().getFullYear()
 </script>
 
 <style scoped>
 .footer {
   position: relative; z-index: 1;
-  padding: 0; min-height: 300px;
+  padding: 0; min-height: 450px;
   display: flex; align-items: flex-end; justify-content: center;
   overflow: hidden;
+  background: var(--depth-5);
+}
+/* Overlay to blend the image with the section above */
+.footer::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 150px;
+  background: linear-gradient(180deg, var(--depth-5) 0%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
 }
 .footer-bg {
   position: absolute; inset: 0;

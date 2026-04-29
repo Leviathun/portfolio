@@ -1,5 +1,11 @@
 <template>
   <section class="section skills" id="skills">
+    <!-- Decorative fish: Dory left (flipped to face right), Nemo right, extra Nemo bottom-left -->
+    <img :src="bluefishImg" alt="" class="deco deco-bluefish" ref="bluefishRef" aria-hidden="true" />
+    <img :src="nemoImg" alt="" class="deco deco-nemo" ref="nemoRef" aria-hidden="true" />
+    <img :src="nemoImg" alt="" class="deco deco-nemo-2" ref="nemo2Ref" aria-hidden="true" />
+    <img :src="bluefishImg" alt="" class="deco deco-bluefish-2" ref="bluefish2Ref" aria-hidden="true" />
+
     <div class="container">
       <div class="section-header">
         <span class="section-tag">&lt;skills&gt;</span>
@@ -22,8 +28,18 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue'
+import { gsap } from 'gsap'
 import TreasureCard from '@/components/ui/TreasureCard.vue'
 import SkillItem from '@/components/ui/SkillItem.vue'
+
+import bluefishImg from '@/assets/images/other/bluefish.png'
+import nemoImg from '@/assets/images/other/nemofish.png'
+
+const bluefishRef = ref(null)
+const nemoRef = ref(null)
+const nemo2Ref = ref(null)
+const bluefish2Ref = ref(null)
 
 const D = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons'
 const categories = [
@@ -53,15 +69,59 @@ const categories = [
     { name: 'Notion', icon: `${D}/notion/notion-original.svg`, invert: true },
   ]},
 ]
+
+onMounted(() => {
+  if (bluefishRef.value) {
+    gsap.to(bluefishRef.value, { x: 40, y: -12, duration: 4.5, ease: 'sine.inOut', yoyo: true, repeat: -1 })
+  }
+  if (nemoRef.value) {
+    gsap.to(nemoRef.value, { x: -30, y: 10, rotation: -6, duration: 3.5, ease: 'sine.inOut', yoyo: true, repeat: -1 })
+  }
+  if (nemo2Ref.value) {
+    gsap.to(nemo2Ref.value, { x: 20, y: 8, duration: 4, ease: 'sine.inOut', yoyo: true, repeat: -1 })
+  }
+  if (bluefish2Ref.value) {
+    gsap.to(bluefish2Ref.value, { x: -25, y: 6, duration: 5, ease: 'sine.inOut', yoyo: true, repeat: -1 })
+  }
+})
 </script>
 
 <style scoped>
 .skills {
+  position: relative;
   background: linear-gradient(180deg, var(--depth-2) 0%, var(--depth-3) 100%);
 }
-.section-tag { color: var(--teal-light); }
-.section-title { color: var(--text-dark); }
-.section-subtitle { color: var(--text-dark-sub); }
+
+/* Decorative fish - z-index:2 behind container z-index:3 */
+.deco {
+  position: absolute; pointer-events: none; z-index: 2;
+  opacity: 0.85;
+}
+/* Dory - flipped to face right */
+.deco-bluefish {
+  left: 1%; top: 25%;
+  width: 150px; height: auto;
+  transform: scaleX(-1);
+}
+.deco-bluefish-2 {
+  right: 3%; bottom: 15%;
+  width: 100px; height: auto;
+  opacity: 0.6;
+}
+.deco-nemo {
+  right: 2%; top: 30%;
+  width: 130px; height: auto;
+}
+.deco-nemo-2 {
+  left: 4%; bottom: 20%;
+  width: 90px; height: auto;
+  transform: scaleX(-1);
+  opacity: 0.6;
+}
+
+.section-tag { color: var(--teal-light); font-family: var(--font-mono); font-size: 0.85rem; }
+.section-title { color: var(--text-primary); }
+.section-subtitle { color: var(--text-secondary); }
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
 .skill-cat-title {
   display: flex; align-items: center; gap: 10px;
@@ -70,4 +130,14 @@ const categories = [
 }
 .skill-cat-title :deep(svg) { stroke: var(--teal); }
 .skill-items { display: flex; flex-wrap: wrap; gap: 12px; }
+
+@media(max-width:1024px) {
+  .deco-bluefish { width: 120px; }
+  .deco-nemo { width: 100px; }
+}
+@media(max-width:768px) {
+  .deco-bluefish { width: 80px; opacity: 0.4; }
+  .deco-nemo { width: 70px; opacity: 0.4; }
+  .deco-nemo-2, .deco-bluefish-2 { display: none; }
+}
 </style>

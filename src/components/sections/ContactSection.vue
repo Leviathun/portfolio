@@ -36,9 +36,9 @@ const contacts = [
 .contact {
   background: linear-gradient(180deg, var(--depth-4) 0%, var(--depth-5) 100%);
 }
-.section-tag { color: var(--teal-light); }
-.section-title { color: var(--text-dark); }
-.section-subtitle { color: var(--text-dark-sub); }
+.section-tag { color: var(--teal-light); font-family: var(--font-mono); font-size: 0.85rem; }
+.section-title { color: var(--text-primary); }
+.section-subtitle { color: var(--text-secondary); }
 .contact-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; max-width: 800px; margin: 0 auto; }
 .contact-content :deep(.treasure-card) { text-align: center; }
 .contact-icon { margin-bottom: 16px; color: var(--teal); }
