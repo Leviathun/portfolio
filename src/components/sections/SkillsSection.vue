@@ -8,7 +8,6 @@
 
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">&lt;skills&gt;</span>
         <h2 class="section-title">Tech Stack</h2>
         <p class="section-subtitle">Technologies and tools I work with</p>
       </div>
@@ -119,7 +118,6 @@ onMounted(() => {
   opacity: 0.6;
 }
 
-.section-tag { color: var(--teal-light); font-family: var(--font-mono); font-size: 0.85rem; }
 .section-title { color: var(--text-primary); }
 .section-subtitle { color: var(--text-secondary); }
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
