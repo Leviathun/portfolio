@@ -18,11 +18,10 @@
             Available for hire
           </span>
         </div>
-        <p class="hero-greeting">สวัสดี, I'm</p>
-        <h1 class="hero-name">
-          <span class="name-line">Tanabadee</span>
-          <span class="name-line accent">Kraitong</span>
-        </h1>
+        <p class="hero-greeting">Hello, I'm</p>
+          <h1 class="hero-name">
+            <span class="name-line">Tanabadee Kraitong</span>
+          </h1>
         <div class="hero-title-wrapper">
           <span class="hero-title-prefix">I'm a</span>
           <span class="hero-title">{{ typedText }}</span>
@@ -123,7 +122,7 @@ onMounted(() => {
 .hero-content {
   position: relative; z-index: 5;
   max-width: 1200px; width: 100%;
-  margin: 0 auto; padding: 100px 24px 0;
+  margin: 0 auto; padding: 30px 24px 0;
 }
 .hero-text { max-width: 600px; }
 
@@ -149,12 +148,12 @@ onMounted(() => {
 }
 @keyframes pulse-dot { 0%,100%{box-shadow:0 0 6px rgba(34,197,94,0.6)} 50%{box-shadow:0 0 12px rgba(34,197,94,0.9)} }
 
-.hero-greeting { font-size: 1.1rem; color: #1e3a5f; margin-bottom: 8px; font-weight: 500; }
+.hero-greeting { font-size: 1.5rem; color: #1e3a5f; margin-bottom: 5px; font-weight: 600; }
 .hero-name {
   font-family: var(--font-heading); font-size: clamp(2.5rem, 6vw, 4.5rem);
   font-weight: 900; line-height: 1.1; margin-bottom: 12px;
 }
-.name-line { display: block; color: #0f2b44; }
+.name-line { display: inline; color: #0f2b44; }
 .name-line.accent {
   background: linear-gradient(135deg, #0369a1 0%, #0891b2 50%, #0d9488 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
@@ -163,20 +162,22 @@ onMounted(() => {
   display: flex; align-items: center; gap: 8px;
   font-size: 1.3rem; margin-bottom: 16px; color: #1e4d6e;
 }
-.hero-title { color: #0369a1; font-weight: 600; }
+.hero-title { color: #0369a1; font-size: 1.3rem; font-weight: 800; letter-spacing: 1px; }
 .typed-cursor { color: #0369a1; animation: blink 1s infinite; font-weight: 300; }
 .hero-description {
-  font-size: 1rem; color: #2d5f7e; max-width: 520px;
+  font-size: 1.1rem; color: #244b63; max-width: 520px;
+  font-weight: 500;
   margin-bottom: 28px; line-height: 1.8;
 }
 .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
 .btn-primary {
+  border: 2.5px solid rgb(255, 255, 255);
   background: linear-gradient(135deg, #0369a1, #0891b2);
   color: #fff; box-shadow: 0 4px 16px rgba(3,105,161,0.3);
 }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(3,105,161,0.4); }
 .btn-outline-light {
-  border: 1.5px solid rgba(15,43,68,0.3); color: #0f2b44;
+  border: 2.5px solid rgba(15,43,68,0.3); color: #0f2b44;
   background: rgba(255,255,255,1); backdrop-filter: blur(6px);
 }
 .btn-outline-light:hover { background: rgba(255,255,255,0.4); transform: translateY(-2px); }

@@ -70,7 +70,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll))
 }
 .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
 
-.nav-logo { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; letter-spacing: -1px; color: #0f2b44; transition: color 0.4s ease; }
+.nav-logo { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; letter-spacing: 1px; color: #0f2b44; transition: color 0.4s ease; }
 .dark .nav-logo { color: #e0f2fe; }
 
 

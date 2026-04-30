@@ -4,7 +4,7 @@
     <div class="container footer-inner">
       <p class="footer-text">
         <span class="footer-code">&lt;/&gt;</span>
-        Built with ❤️ by <strong>Tanabadee Kraitong</strong>
+        Built with passion by <strong>Tanabadee Kraitong</strong>
       </p>
       <p class="footer-year">© {{ year }} All Rights Reserved</p>
     </div>

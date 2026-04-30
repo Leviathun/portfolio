@@ -8,7 +8,6 @@
 
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">&lt;projects&gt;</span>
         <h2 class="section-title">My Projects</h2>
         <p class="section-subtitle">Explore my work across different platforms</p>
       </div>
@@ -115,17 +114,16 @@ onMounted(() => {
   opacity: 0.8;
 }
 .deco-jelly-2 {
-  left: 3%; top: 50%;
+  left: 3%; top: 70%;
   width: 250px; height: auto;
   opacity: 0.6;
 }
 .deco-jelly-3 {
-  right: 0; bottom: 10%;
-  width: 350px; height: auto;
+  right: 3%; bottom: 20%;
+  width: 150px; height: auto;
   opacity: 0.5;
 }
 
-.section-tag { color: var(--teal-light); font-family: var(--font-mono); font-size: 0.85rem; }
 .section-title { color: var(--text-primary); }
 .section-subtitle { color: var(--text-secondary); }
 .projects-filter { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }

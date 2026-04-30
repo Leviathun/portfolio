@@ -1,14 +1,13 @@
 <template>
   <section class="section about" id="about">
     <!-- Water surface transition from hero (limited height) -->
-    <img :src="waterSurface" alt="" class="water-surface-top" aria-hidden="true" />
+    <img :src="waterSurface" alt="" class="water-surface-top" ref="waterSurfaceRef" aria-hidden="true" />
 
     <!-- Decorative: Diver on the right -->
     <img :src="diverImg" alt="" class="deco deco-diver" ref="diverRef" aria-hidden="true" />
 
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">&lt;about&gt;</span>
         <h2 class="section-title">About Me</h2>
         <p class="section-subtitle">Get to know the person behind the code</p>
       </div>
@@ -39,6 +38,7 @@ import waterSurface from '@/assets/images/other/to the under.png'
 import diverImg from '@/assets/images/other/diver.png'
 
 const diverRef = ref(null)
+const waterSurfaceRef = ref(null)
 
 const cards = [
   { icon: '🎯', title: 'Who Am I', text: "Hi, I'm <strong>@Leviathun</strong> — a curious developer who's always looking for the next challenge. I specialize in building digital products across multiple platforms." },
@@ -54,7 +54,14 @@ onMounted(() => {
       ease: 'sine.inOut', yoyo: true, repeat: -1
     })
   }
+  if (waterSurfaceRef.value) {
+    gsap.to(waterSurfaceRef.value, {
+      x: 30, duration: 5,
+      ease: 'sine.inOut', yoyo: true, repeat: -1
+    })
+  }
 })
+
 </script>
 
 <style scoped>
@@ -66,8 +73,8 @@ onMounted(() => {
 
 /* Water surface - limited height, not blocking content */
 .water-surface-top {
-  position: absolute; top: -2px; left: 0;
-  width: 100%; height: 180px;
+  position: absolute; top: -2px; left: -5%;
+  width: 110vw; max-width: none; height: 180px;
   object-fit: cover; object-position: center top;
   z-index: 2; pointer-events: none;
   transform: rotate(180deg);
@@ -85,7 +92,6 @@ onMounted(() => {
   opacity: 0.9;
 }
 
-.section-tag { color: var(--teal-light); font-family: var(--font-mono); font-size: 0.85rem; }
 .section-title { color: var(--text-primary); }
 .section-subtitle { color: var(--text-secondary); }
 .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-bottom: 60px; }
